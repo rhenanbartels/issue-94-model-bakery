@@ -79,12 +79,14 @@ WSGI_APPLICATION = 'bookstore.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASE_URL = config("DATABASE_URL")
-HR_DB_URL = config("HR_DATABSE_URL")
+HR_DB_URL = config("HR_DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL),
     'hr_db': dj_database_url.parse(HR_DB_URL),
 }
 
+
+DATABASE_ROUTERS = ["bookstore.db_router.CustomDBRouter"]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
