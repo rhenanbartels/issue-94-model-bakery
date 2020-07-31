@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+    db:
+      image: postgres:12.3
+      container_name: db_postgtes
+      env_file: .env_postgres
+      ports:
+          - "15433:5432"
+      volumes:
+          - ./docker/postgresql/data:/var/lib/postgresql/data
