@@ -1,6 +1,4 @@
-source .env
+# Code example to resolve an issue
 
-# Create secondary Database
-echo "CREATE DATABASE hr_db" |\
-    psql $(echo $DATABASE_URL |\
-    cut -d '/' -f 1-3 | xargs -I "%" echo %/)
+
+[This issue](https://github.com/model-bakers/model_bakery/issues/94)
