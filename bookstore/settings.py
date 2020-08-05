@@ -78,11 +78,13 @@ WSGI_APPLICATION = 'bookstore.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+HR_DB = config("HR_DB", default="hr_db")
+
 DATABASE_URL = config("DATABASE_URL")
 HR_DB_URL = config("HR_DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL),
-    'hr_db': dj_database_url.parse(HR_DB_URL),
+    HR_DB: dj_database_url.parse(HR_DB_URL),
 }
 
 
